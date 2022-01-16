@@ -1,10 +1,10 @@
-import NavBar from "../NavBar/NavBar";
+
 import './Main.css';
 
 const Main = () => {
   return (
     <div className="main">
-      <NavBar />
+      <h1>Content</h1>
     </div>
   );
 };

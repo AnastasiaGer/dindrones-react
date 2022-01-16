@@ -1,12 +1,12 @@
 
 import './Main.css';
-import NavBar from '../NavBar/NavBar';
+import Header from '../Header/Header';
 import Footer from '../Footer/Footer'
 
 const Main = () => {
   return (
     <div>
-      <NavBar />
+      <Header />
       <div className="page">
         <div className="intro" id="intro">
           <div className="container">

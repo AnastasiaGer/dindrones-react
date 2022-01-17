@@ -1,9 +1,74 @@
-
+import { useState } from 'react';
 import './Main.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer'
 
 const Main = () => {
+  const [items, setItems] = useState([
+    {
+      title: 'Din battery box',
+      id: 1,
+      category: 'charger',
+      photo: '1.png',
+      text: '4s18p 18650 battery box with individual cell fuses, controlled by high quality BMS with Bluetooth connectivity, enclosed in a custom box with your name on it.', price: 199
+    },
+    {
+      title: 'Octofaerry',
+      id: 2,
+      category: 'octofaerry',
+      photo: 'octofaerry-1.jpg',
+      text: 'Meet the world’s most affordable & fastest xclassName/mega className compliant frame build 2021 xclassName world champion, fastest lap 2021 IO qualifying and finals', price: 199
+    },
+    {
+      title: '50 sets of Gemfan Hurricane',
+      id: 3,
+      category: 'screw',
+      subtitle: 'MCK 51466-3',
+      photo: 'image001.jpg',
+      text: 'Gemfan Hurricane 51466 Durable 3-Blade Propeller was designed for agile flight at high speed with its incredibly low weight at around 4g.', price: 164.50
+    },
+    {
+      title: 'Tattu R-Line Version 4.0 1400mAh 22.2V 130C 6S1P',
+      id: 4,
+      category: 'battery',
+      photo: '1.jpg',
+      subtitle: 'Lipo Battery Pack With XT60 Plug',
+      text: 'Tattu R-Line Version 4.0 1400mAh 22.2V 130C 6S1P Lipo Battery Pack with XT60 Plug for professional FPV racing competitions.', price: 39.99
+    },
+    {
+      title: 'Hobbywing XRotor 4in1 ESC',
+      id: 5,
+      category: 'xrotor',
+      photo: 'xrotor-1.jpg',
+      subtitle: 'BLHeli-32 DShot1200 for FPV Pilots',
+      text: 'High performance 32-bit microprocessor with the running frequency of up to 48MHz for excellent performance.', price: 69.99
+    },
+    {
+      title: 'Hobbywing XRotor F7',
+      id: 6,
+      category: 'xrotorf7',
+      photo: 'xrotor7-1.jpg',
+      subtitle: 'Flight Controller (Convertible)',
+      text: 'Special interface for DJI image transmission system!', price: 39.99
+    },
+    {
+      title: 'RunCam Racer Nano3 MCK',
+      id: 7,
+      category: 'runcam',
+      photo: 'runcam-1.jpg',
+      subtitle: 'The RunCam Racer Nano 3 - MCK FPV Edition is a 1.8mm lens FPV camera with a switchable 4:3 / 16:9 resolution ratio',
+      text: 'This camera was designed in collaboration with the world-renowned FPV pilot - Min Chan Kim!', price: 35.99
+    },
+    {
+      title: 'LOW KEY. NO CAP. SO MUCH GAS.',
+      id: 8,
+      category: 't-shirt',
+      photo: 't-shirt-1.jpg',
+      subtitle: 'T-shirt',
+      text: 'The most popular T-shirt of 2021!', price: 25.00
+    },
+  ])
+
   return (
     <div>
       <Header />
@@ -33,147 +98,27 @@ const Main = () => {
         <div className="shop section" id="shop">
           <div className="container">
             <div className="shop__container">
-              <div className="shop__inner">
-                <div className="shop__photo">
-                  <img src="img/items/octofaerry/octofaerry-1.jpg" alt="" />
-                </div>
+              {items.map((item) => (
+                <div className="shop__inner" key={item.id}>
+                  <div className="shop__photo">
+                    <img src={`/img/items/${item.category}/${item.photo}`}
+                      alt="" />
+                  </div>
 
-                <div className="shop__content">
-                  <h3 className="shop__title">Octofaerry</h3>
-                  <div className="product__info-price"> 199 $</div>
-                  <p className="shop__text">
-                    Meet the world’s most affordable & fastest xclassName/mega className compliant frame build
-                    2021 xclassName world champion, fastest lap 2021 IO qualifying and finals
-                  </p>
+                  <div className="shop__content">
+                    <h3 className="shop__title">{item.title}</h3>
+                    <h2 className="shop__subtitle">{item.subtitle}</h2>
+                    <div className="product__info-price"> {item.price} $</div>
+                    <p className="shop__text">
+                      {item.text}
+                    </p>
 
-                  <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
+                    <div className="shop__buttons">
+                      <a className="btn" href="/">Learn More</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="shop__inner">
-                <div className="shop__photo">
-                  <img src="img/items/screw/image001.jpg" alt="" />
-                </div>
-
-                <div className="shop__content">
-                  <h3 className="shop__title">50 sets of Gemfan Hurricane</h3>
-                  <h2 className="shop__subtitle">MCK 51466-3</h2>
-                  <div className="product__info-price"> 164.50 $</div>
-                  <p className="shop__text">
-                    Gemfan's Hurricane 51466 Durable 3-Blade Propeller was
-                    designed for agile flight at high speed with its incredibly
-                    low weight at around 4g.
-                  </p>
-
-                  <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="shop__inner">
-                <div className="shop__photo">
-                  <img src="img/items/battery/1.jpg" alt="" />
-                </div>
-
-                <div className="shop__content">
-                  <h3 className="shop__title">Tattu R-Line Version 4.0 1400mAh 22.2V 130C 6S1P </h3>
-                  <h2 className="shop__subtitle">Lipo Battery Pack With XT60 Plug</h2>
-                  <div className="product__info-price"> 39.99 $</div>
-                  <p className="shop__text">
-                    Tattu R-Line Version 4.0 1400mAh 22.2V 130C 6S1P Lipo Battery
-                    Pack with XT60 Plug for professional FPV racing competitions.
-                  </p>
-
-                  <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="shop__inner">
-                <div className="shop__photo">
-                  <img src="img/items//xrotor/xrotor-1.jpg" alt="" />
-                </div>
-
-                <div className="shop__content">
-                  <h3 className="shop__title">Hobbywing XRotor 4in1 ESC</h3>
-                  <h2 className="shop__subtitle">
-                    BLHeli-32 DShot1200 for FPV Pilots
-                  </h2>
-                  <div className="product__info-price"> 69.99 $</div>
-                  <p className="shop__text">
-                    High performance 32-bit microprocessor with the running
-                    frequency of up to 48MHz for excellent performance.
-                  </p>
-
-                  <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="shop__inner">
-                <div className="shop__photo">
-                  <img src="img/items/xrotorf7/xrotorf7-1.jpg" alt="" />
-                </div>
-
-                <div className="shop__content">
-                  <h3 className="shop__title">Hobbywing XRotor F7 </h3>
-                  <h2 className="shop__subtitle">Flight Controller (Convertible)</h2>
-                  <div className="product__info-price"> 39.99 $</div>
-                  <p className="shop__text">
-                    Special interface for DJI image transmission system!
-                  </p>
-
-                  <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
-                  </div>
-                </div>
-              </div>
-
-
-              <div className="shop__inner">
-                <div className="shop__photo">
-                  <img src="img/items/runcam/runcam-1.jpg" alt="" />
-                </div>
-
-                <div className="shop__content">
-                  <h3 className="shop__title">RunCam Racer Nano3 MCK  </h3>
-                  <h2 className="shop__subtitle">The RunCam Racer Nano 3 - MCK FPV Edition is a 1.8mm lens FPV camera with a switchable 4:3 / 16:9 resolution ratio</h2>
-                  <div className="product__info-price"> 35.99 $</div>
-                  <p className="shop__text">
-                    This camera was designed in collaboration with the world-renowned FPV pilot - Min Chan Kim!
-                  </p>
-
-                  <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="shop__inner">
-                <div className="shop__photo">
-                  <img src="img/items/t-shirt/t-shirt-1.png" alt="" />
-                </div>
-
-                <div className="shop__content">
-                  <h3 className="shop__title">LOW KEY.
-                    NO CAP.
-                    SO MUCH GAS.</h3>
-                  <h2 className="shop__subtitle">T-shirt</h2>
-                  <div className="product__info-price"> 25.00 $</div>
-                  <p className="shop__text">
-                    The most popular T-shirt of 2021!
-                  </p>
-
-                  <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

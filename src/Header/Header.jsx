@@ -1,4 +1,5 @@
 import './Header.css';
+import { Link } from 'react-router-dom';
 import logo from '../dd-logo.png';
 
 const NavBar = () => {
@@ -7,7 +8,8 @@ const NavBar = () => {
       <div className="container">
         <div className="header__inner">
           <div className="header__logo" data-scroll="#intro">
-            <img src={logo} alt="" width="300" height="55" />
+            <Link to='/'><img src={logo} alt="" width="300" height="55" /></Link>
+            
           </div>
 
           <nav className="nav" id="nav">

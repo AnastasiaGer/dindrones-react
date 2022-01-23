@@ -33,6 +33,15 @@
 .product__info-text {
   font-size: 22px;
   margin-bottom: 1rem;
+  color: #06517d;
+}
+
+.product__info-text span {
+  font-size: 18px;
+}
+
+.product__info-text b {
+  text-decoration: underline;
 }
 
 .product__info-buy {

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import './Main.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer'
 
 const Main = () => {
   const [items, setItems] = useState([
@@ -70,8 +68,6 @@ const Main = () => {
   ])
 
   return (
-    <div>
-      <Header />
       <div className="page">
         <div className="intro" id="intro">
           <div className="container">
@@ -480,9 +476,7 @@ const Main = () => {
             </a>
           </div>
         </section>
-        <Footer />
       </div>
-    </div>
   );
 };
 

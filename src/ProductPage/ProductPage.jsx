@@ -1,3 +1,4 @@
+import './ProductPage.css';
 const ProductPage = () => {
   return (
     <div className="page">
@@ -25,144 +26,50 @@ const ProductPage = () => {
               <h3 className="product__info-title">DinDrones Battery Box</h3>
               <div className="product__info-price">600 $</div>
               <div className="product__info-text">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  focusable="false"
-                  width="1em"
-                  height="1em"
-                  style="
-                    -ms-transform: rotate(360deg);
-                    -webkit-transform: rotate(360deg);
-                    transform: rotate(360deg);
-                  "
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                >
-                  <g fill="#5bb5c7">
-                    <path
-                      d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112l6.82-8.69a.486.486 0 0 1 .04-.045z"
-                    />
-                  </g>
+                <svg>
+                  <use xlinkHref="#checkmark"></use>
                 </svg>
                 Power density: <br />
-                <span style="font-size: 18px"
-                >825Wh in a compact (196mm x 196mm x 83mm or 7.7in x 7.7in x
+                <span>825Wh in a compact (196mm x 196mm x 83mm or 7.7in x 7.7in x
                   3.2in) enclosure</span
                 >
               </div>
               <div className="product__info-text">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  focusable="false"
-                  width="1em"
-                  height="1em"
-                  style="
-                    -ms-transform: rotate(360deg);
-                    -webkit-transform: rotate(360deg);
-                    transform: rotate(360deg);
-                  "
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                >
-                  <g fill="#5bb5c7">
-                    <path
-                      d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112l6.82-8.69a.486.486 0 0 1 .04-.045z"
-                    />
-                  </g>
+                <svg>
+                  <use xlinkHref="#checkmark"></use>
                 </svg>
                 Individual: <br />
-                <span style="font-size: 18px">your name on a custom box</span>
+                <span>your name on a custom box</span>
               </div>
               <div className="product__info-text">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  focusable="false"
-                  width="1em"
-                  height="1em"
-                  style="
-                    -ms-transform: rotate(360deg);
-                    -webkit-transform: rotate(360deg);
-                    transform: rotate(360deg);
-                  "
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                >
-                  <g fill="#5bb5c7">
-                    <path
-                      d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112l6.82-8.69a.486.486 0 0 1 .04-.045z"
-                    />
-                  </g>
+                <svg>
+                  <use xlinkHref="#checkmark"></use>
                 </svg>
                 Controlled by an app: <br />
-                <span style="font-size: 18px"
-                >current charge / discharge, cell voltage, set cut off
+                <span>current charge / discharge, cell voltage, set cut off
                   voltage, turn off the battery with a touch of a button</span
                 >
               </div>
               <div className="product__info-text">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  focusable="false"
-                  width="1em"
-                  height="1em"
-                  style="
-                    -ms-transform: rotate(360deg);
-                    -webkit-transform: rotate(360deg);
-                    transform: rotate(360deg);
-                  "
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                >
-                  <g fill="#5bb5c7">
-                    <path
-                      d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112l6.82-8.69a.486.486 0 0 1 .04-.045z"
-                    />
-                  </g>
+                <svg>
+                  <use xlinkHref="#checkmark"></use>
                 </svg>
                 Improved safety: <br />
-                <span style="font-size: 18px"
-                >each battery is individually fused “Tesla style”</span
+                <span>each battery is individually fused “Tesla style”</span
                 >
               </div>
               <div className="product__info-text">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  aria-hidden="true"
-                  focusable="false"
-                  width="1em"
-                  height="1em"
-                  style="
-                    -ms-transform: rotate(360deg);
-                    -webkit-transform: rotate(360deg);
-                    transform: rotate(360deg);
-                  "
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                >
-                  <g fill="#5bb5c7">
-                    <path
-                      d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112l6.82-8.69a.486.486 0 0 1 .04-.045z"
-                    />
-                  </g>
+                <svg>
+                  <use xlinkHref="#checkmark"></use>
                 </svg>
                 Service friendly: <br />
-                <span style="font-size: 18px"
-                >any cell can be replaced in case of a failure</span
+                <span>any cell can be replaced in case of a failure</span
                 >
               </div>
               <form action="" className="product__info-options">
-                <div className="product__info-text" style="color: #06517d">
+                <div className="product__info-text">
                   This product is on backorder, please email me at:
-                  <b style="text-decoration: underline">din@dindrones.com</b>
+                    <b>din@dindrones.com</b>
                   with your order details.
                 </div>
               </form>

@@ -1,32 +1,10 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Main.css';
-let URL = `https://api.npoint.io/be795535d96d9ac59526`
+import useFetch from '../useFetch.js';
 
 const Main = () => {
-  const [items, setItems] = useState([])
 
-  useEffect(() => {
-    const abortCont = new AbortController();
-
-    fetch(URL, {signal: abortCont.signal})
-      .then(response => {
-        if (!response.ok) {
-          throw Error('could not fetch the data')
-        }
-        return response.json()
-      })
-      .then(data => {
-        setItems(data.products)
-      })
-      .catch(err => {
-        if (err.name === 'AbortError') {
-          console.log('fetch aborted')
-        } 
-      })
-    
-    return () => abortCont.abort()
-  })
+const {data: items} = useFetch(`https://api.npoint.io/be795535d96d9ac59526/products`)
 
   return (
     <div className="page">
@@ -46,7 +24,7 @@ const Main = () => {
                 custom box with your name on it.
               </h1>
 
-              <Link className="btn btn-inner" to="/product">Learn More</Link>
+              <Link className="btn btn-inner" to="/products/1">Learn More</Link>
             </div>
           </div>
         </div>
@@ -71,7 +49,7 @@ const Main = () => {
                   </p>
 
                   <div className="shop__buttons">
-                    <a className="btn" href="/">Learn More</a>
+                    <Link className="btn" to={`/products/${item.id}`}>Learn More</Link>
                   </div>
                 </div>
               </div>

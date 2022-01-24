@@ -1,70 +1,27 @@
+import { useParams } from 'react-router-dom';
 import './ProductPage.css';
+import useFetch from '../useFetch.js';
 const ProductPage = () => {
+
+  const { id } = useParams()
+  const {data: item} = useFetch('https://api.npoint.io/be795535d96d9ac59526/products/' + id)
+  
   return (
     <div className="page">
       <section className="product" id="intro">
         <div className="container">
           <div className="product__wrapper" id="buy">
-            <div className="product-slider">
-              <div className="product__photo">
-                <img src="img/items/charger/1.png" alt="" />
-              </div>
-              <div className="product__photo">
-                <img src="img/items/charger/2.png" alt="" />
-              </div>
-              <div className="product__photo">
-                <img src="img/items/charger/3.png" alt="" />
-              </div>
-              <div className="product__photo">
-                <img src="img/items/charger/4.png" alt="" />
-              </div>
-              <div className="product__photo">
-                <img src="img/items/charger/5.jpg" alt="" />
-              </div>
-            </div>
+                  {item && (
+        
             <div className="product__info">
-              <h3 className="product__info-title">DinDrones Battery Box</h3>
-              <div className="product__info-price">600 $</div>
+              <h3 className="product__info-title">{ item.title}</h3>
+              <div className="product__info-price">{ item.price} $</div>
               <div className="product__info-text">
                 <svg>
                   <use xlinkHref="#checkmark"></use>
                 </svg>
                 Power density: <br />
-                <span>825Wh in a compact (196mm x 196mm x 83mm or 7.7in x 7.7in x
-                  3.2in) enclosure</span
-                >
-              </div>
-              <div className="product__info-text">
-                <svg>
-                  <use xlinkHref="#checkmark"></use>
-                </svg>
-                Individual: <br />
-                <span>your name on a custom box</span>
-              </div>
-              <div className="product__info-text">
-                <svg>
-                  <use xlinkHref="#checkmark"></use>
-                </svg>
-                Controlled by an app: <br />
-                <span>current charge / discharge, cell voltage, set cut off
-                  voltage, turn off the battery with a touch of a button</span
-                >
-              </div>
-              <div className="product__info-text">
-                <svg>
-                  <use xlinkHref="#checkmark"></use>
-                </svg>
-                Improved safety: <br />
-                <span>each battery is individually fused “Tesla style”</span
-                >
-              </div>
-              <div className="product__info-text">
-                <svg>
-                  <use xlinkHref="#checkmark"></use>
-                </svg>
-                Service friendly: <br />
-                <span>any cell can be replaced in case of a failure</span
-                >
+                <span>{ item.text}</span>
               </div>
               <form action="" className="product__info-options">
                 <div className="product__info-text">
@@ -74,123 +31,8 @@ const ProductPage = () => {
                 </div>
               </form>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="specifications section">
-        <div className="container">
-          <div className="specifications__inner">
-            <h3 className="specifications__title">Specifications</h3>
-
-            <div className="specifications__tab-content">
-              <ul className="specifications__list">
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Voltage:</div>
-                  <div className="specifications__item-right">14.8V</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">
-                    End of Charge Voltage:
-                  </div>
-                  <div className="specifications__item-right">16.8V</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">
-                    End of Discharge Voltage:
-                  </div>
-                  <div className="specifications__item-right">10V</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Capacity:</div>
-                  <div className="specifications__item-right">55.8Ah</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">
-                    Nominal Stored Energy:
-                  </div>
-                  <div className="specifications__item-right">825Wh</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Chemistry:</div>
-                  <div className="specifications__item-right">Lithium-ion</div>
-                </li>
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Standard Charge:</div>
-                  <div className="specifications__item-right">
-                    20,000 mA: CC-CV 100 mA cut-off
-                  </div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">
-                    Quick Charge Current:
-                  </div>
-                  <div className="specifications__item-right">30,000mA</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">
-                    Max Continuous Discharge Current:
-                  </div>
-                  <div className="specifications__item-right">30,000mA</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Charging Temp:</div>
-                  <div className="specifications__item-right">0°C ~ 45°C</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Discharging Temp:</div>
-                  <div className="specifications__item-right">-20°C ~ 70°C</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Storage Temp:</div>
-                  <div className="specifications__item-right">-5°C ~ 35°C</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Storage Humidity:</div>
-                  <div className="specifications__item-right">≤75 % RH</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Length:</div>
-                  <div className="specifications__item-right">196mm</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Weight:</div>
-                  <div className="specifications__item-right">196mm</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Height:</div>
-                  <div className="specifications__item-right">83mm</div>
-                </li>
-
-                <li className="specifications__item">
-                  <div className="specifications__item-left">Weight:</div>
-                  <div className="specifications__item-right">10lb</div>
-                </li>
-              </ul>
-
-              <div className="text-center">
-                <div
-                  className="product__info-buy product__info-buy--md"
-                  data-scroll="#buy"
-                >
-                  Buy
-                </div>
-              </div>
-            </div>
+      )}
+            
           </div>
         </div>
       </section>

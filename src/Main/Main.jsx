@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom';
 import './Main.css';
-//import useFetch from '../useFetch.js';
 import {projectFirestore} from '../firebase/config';
 import { useEffect, useState } from 'react';
 
 const Main = () => {
-
-//const {data: items} = useFetch(`https://api.npoint.io/be795535d96d9ac59526/products`)
   const [items, setItems] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(false)

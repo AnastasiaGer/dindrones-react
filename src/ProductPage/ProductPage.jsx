@@ -1,13 +1,34 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import {projectFirestore} from '../firebase/config';
 import './ProductPage.css';
-import useFetch from '../useFetch.js';
+
 const ProductPage = () => {
+  const [item, setItem] = useState(null)
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(false)
 
   const { id } = useParams()
-  const {data: item} = useFetch('https://api.npoint.io/be795535d96d9ac59526/products/' + id)
+
+  useEffect(() => {
+    setIsPending(true)
+    projectFirestore.collection('products').doc(id).get().then((doc) => {
+      if (doc.exists) {
+        setIsPending(false)
+        setItem(doc.data())
+      } else {
+        setIsPending(false)
+        setError('Could not fine that product')
+    }
+  })
+
+
+  },[id])
   
   return (
     <div className="page">
+      {error && <p>{error}</p>}
+      {isPending && <p>Loading...</p> }
       <section className="product" id="intro">
         <div className="container">
           <div className="product__wrapper" id="buy">

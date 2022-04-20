@@ -1,4 +1,5 @@
-import  './Footer.css';
+import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -29,7 +30,12 @@ const Footer = () => {
                   <use xlinkHref="#fb"></use>
                 </svg>
               </a>
-              <a className="footer__social-link" href="/" target="_blank" rel="noreferrer">
+              <a
+                className="footer__social-link"
+                href="/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <svg className="footer__social-icon" width="35" height="35">
                   <use xlinkHref="#whatsup"></use>
                 </svg>
@@ -42,14 +48,14 @@ const Footer = () => {
           </div>
 
           <nav className="footer__nav">
-            <a className="footer__nav-link" href="/">
+            <Link to="/shop" className="footer__nav-link">
               Shop
+            </Link>
+            <a className="footer__nav-link" href="/">
+              Account
             </a>
             <a className="footer__nav-link" href="/">
-              About
-            </a>
-            <a className="footer__nav-link" href="/">
-              Blog
+              Menu
             </a>
           </nav>
         </div>

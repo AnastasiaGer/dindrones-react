@@ -7,7 +7,7 @@
   z-index: 100000 !important;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   left: 0;
 }
 

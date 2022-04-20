@@ -2,7 +2,8 @@ import { Switch, BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer'
-import Main from './Main/Main';
+import Shop from './Shop/Shop';
+import Home from './Home/Home'
 import ProductPage from './ProductPage/ProductPage';
 
 function App() {
@@ -13,7 +14,10 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path='/'>
-              <Main />
+              <Home />
+            </Route>
+            <Route exact path='/shop'>
+              <Shop />
             </Route>
             <Route path='/products/:id'>
               <ProductPage />

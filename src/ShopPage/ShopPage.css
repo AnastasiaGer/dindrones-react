@@ -31,7 +31,7 @@
 }
 
 .product__info-price {
-  font-size: 28px;
+  font-size: 20px;
   line-height: 1;
   color: #dc9814;
   margin-bottom: 1rem;
@@ -40,6 +40,7 @@
 .product__info-text {
   font-size: 22px;
   margin-bottom: 1rem;
+  color: #06517d;
 }
 
 .product__info-text span {

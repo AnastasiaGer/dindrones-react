@@ -14,7 +14,7 @@ const NavBar = () => {
           <nav className="nav" id="nav">
             <ul className="nav__list">
               <li>
-              <Link to='/products/:1' className="nav__link">Din Battery Box</Link>
+              <Link to='/products/JiNJAd8mS31Px8Ybpd5x' className="nav__link">Din Battery Box</Link>
               </li>
               <li>
               <Link to='/products/CUKVyTXzHoP7Er1pDiOP' className="nav__link">OCTOFAERRY</Link>

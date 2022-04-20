@@ -32,27 +32,6 @@ const Main = () => {
     <div className="page">
       {error && <p>{error}</p>}
       {isPending && <p>Loading...</p> }
-      <div className="intro" id="intro">
-        <div className="container">
-          <div className="intro__wrapper">
-            <div className="intro__photo">
-              <img src="img/items/charger/1.png" alt="" />
-            </div>
-            <div className="intro__inner">
-              <h2 className="intro__title">
-                Din battery box
-              </h2>
-              <h1 className="intro__text">
-                4s18p 18650 battery box with individual cell fuses, controlled
-                by high quality BMS with Bluetooth connectivity, enclosed in a
-                custom box with your name on it.
-              </h1>
-
-              <Link className="btn btn-inner" to="/products/1">Learn More</Link>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="shop section" id="shop">
         <div className="container">

@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { projectFirestore } from "../firebase/config";
 import "./ProductPage.css";
+import Slider from '../Slider/Slider'
 
 const ProductPage = () => {
   const [item, setItem] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
+  const [photos, setPhotos] = useState([])
 
   const { id } = useParams();
 
@@ -20,6 +22,7 @@ const ProductPage = () => {
         if (doc.exists) {
           setIsPending(false);
           setItem(doc.data());
+          setPhotos(doc.data().gallery)
         } else {
           setIsPending(false);
           setError("Could not fine that product");
@@ -31,12 +34,15 @@ const ProductPage = () => {
     <div className="page">
       {error && <p>{error}</p>}
       {isPending && <p>Loading...</p>}
+      <div>{photos}</div>
       <section className="product">
         <div className="container">
           {item && (
+            
             <div className="product__info">
               <div className="product__photo">
-                <img src={`/img/items/${item.category}/${item.photo}`} alt="" />
+                {photos &&               <Slider photos={photos} category={item.category}/>}
+
               </div>
               <div className="product__inner">
                 <h1 className="product__info-title">{item.title}</h1>

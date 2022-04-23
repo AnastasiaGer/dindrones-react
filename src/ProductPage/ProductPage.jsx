@@ -8,7 +8,7 @@ const ProductPage = () => {
   const [item, setItem] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
-  const [photos, setPhotos] = useState([])
+  const [photos, setPhotos] = useState(null)
 
   const { id } = useParams();
 
@@ -34,7 +34,6 @@ const ProductPage = () => {
     <div className="page">
       {error && <p>{error}</p>}
       {isPending && <p>Loading...</p>}
-      <div>{photos}</div>
       <section className="product">
         <div className="container">
           {item && (

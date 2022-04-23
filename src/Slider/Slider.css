@@ -1,0 +1,10 @@
+.thumbnails {
+  display: flex;
+  margin-top: 6rem !important;
+  align-items: center;
+  overflow: scroll;
+}
+
+.dots {
+  bottom: -75px !important;
+}

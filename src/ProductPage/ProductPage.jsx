@@ -31,55 +31,60 @@ const ProductPage = () => {
     <div className="page">
       {error && <p>{error}</p>}
       {isPending && <p>Loading...</p>}
-      <section className="product" id="intro">
+      <section className="product">
         <div className="container">
-          <div className="product__wrapper" id="buy">
-            {item && (
-              <div className="product__info">
-                <div className="intro" id="intro">
-                  <div className="container">
-                    <div className="intro__wrapper">
-                      <div className="intro__photo">
-                        <img
-                          src={`/img/items/${item.category}/${item.photo}`}
-                          alt=""
-                        />
-                      </div>
-                      <div className="intro__inner">
-                        <h1 className="intro__title">{item.title}</h1>
-                        <h2 className="intro__text">{item.text}</h2>
-                        <div className="product__info-price">
-                          {item.price} $
-                        </div>
-                        <h3>DESCRIPTION:</h3>
-                        <ul className="product__info-text">
-                          {item.description.map((des) => (
-                            <li key={des}>{des}</li>
-                          ))}
-                        </ul>
-                        <h3>SPECIFICATION:</h3>
-
-                        <ul className="product__info-text">
-                          {item.specification.map((sp) => (
-                            <li key={sp}>{sp}</li>
-                          ))}
-                        </ul>
-
-                        <h3>WHATS IN THE PACKAGE:</h3>
-
-                        <ul className="product__info-text">
-                          {item.package.map((pk) => (
-                            <li key={pk}>{pk}</li>
-                          ))}
-                        </ul>
-                        {/* <Link className="btn btn-inner" to="/products/1">Learn More</Link> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          {item && (
+            <div className="product__info">
+              <div className="product__photo">
+                <img src={`/img/items/${item.category}/${item.photo}`} alt="" />
               </div>
-            )}
-          </div>
+              <div className="product__inner">
+                <h1 className="product__info-title">{item.title}</h1>
+                <h2 className="product__info-text">{item.text}</h2>
+                <div className="product__info-price">{item.price} $</div>
+                {item.description && (
+                  <div>
+                    <h3 className="product__info-h3">DESCRIPTION:</h3>
+                    <ul className="product__info-text">
+                      {item.description.map((des) => (
+                        <li className="product__info-p" key={des}>
+                          {des}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {item.specification && (
+                  <div>
+                    <h3 className="product__info-h3">SPECIFICATION:</h3>
+
+                    <ul className="product__info-text">
+                      {item.specification.map((sp) => (
+                        <li className="product__info-p" key={sp}>
+                          {sp}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {item.package && (
+                  <div>
+                    <h3 className="product__info-h3">WHATS IN THE PACKAGE:</h3>
+
+                    <ul className="product__info-text">
+                      {item.package.map((pk) => (
+                        <li className="product__info-p" key={pk}>
+                          {pk}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* <Link className="btn btn-inner" to="/products/1">Learn More</Link> */}
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </div>

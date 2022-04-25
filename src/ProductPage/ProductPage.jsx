@@ -2,13 +2,15 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { projectFirestore } from "../firebase/config";
 import "./ProductPage.css";
-import Slider from '../Slider/Slider'
+import Slider from "../Slider/Slider";
+import ReviewFrom from "../ReviewForm/ReviewForm";
+import ReviewList from '../ReviewList/ReviewList';
 
 const ProductPage = () => {
   const [item, setItem] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(false);
-  const [photos, setPhotos] = useState(null)
+  const [photos, setPhotos] = useState(null);
 
   const { id } = useParams();
 
@@ -22,7 +24,7 @@ const ProductPage = () => {
         if (doc.exists) {
           setIsPending(false);
           setItem(doc.data());
-          setPhotos(doc.data().gallery)
+          setPhotos(doc.data().gallery);
         } else {
           setIsPending(false);
           setError("Could not fine that product");
@@ -34,14 +36,12 @@ const ProductPage = () => {
     <div className="page">
       {error && <p>{error}</p>}
       {isPending && <p>Loading...</p>}
-      <section className="product">
+      <section className="product section">
         <div className="container">
           {item && (
-            
             <div className="product__info">
               <div className="product__photo">
-                {photos &&               <Slider photos={photos} category={item.category}/>}
-
+                {photos && <Slider photos={photos} category={item.category} />}
               </div>
               <div className="product__inner">
                 <h1 className="product__info-title">{item.title}</h1>
@@ -90,8 +90,11 @@ const ProductPage = () => {
               </div>
             </div>
           )}
+          <ReviewList />
+      <ReviewFrom />
         </div>
       </section>
+
     </div>
   );
 };

@@ -8,3 +8,7 @@
 .dots {
   bottom: -75px !important;
 }
+
+.slide-number {
+  color: rgb(129, 127, 127);
+}

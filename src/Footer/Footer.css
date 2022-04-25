@@ -6,9 +6,9 @@
 
   z-index: 100000 !important;
   width: 100%;
-  position: absolute;
-  bottom: -50px;
-  left: 0;
+  /* position: absolute;
+  bottom: 0;
+  left: 0; */
 }
 
 .footer__inner {

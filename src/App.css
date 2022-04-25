@@ -3,3 +3,30 @@
   padding: 0;
   box-sizing:border-box;
 }
+
+/* Page */
+.page {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1230px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}

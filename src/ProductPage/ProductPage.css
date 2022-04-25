@@ -1,3 +1,8 @@
+.product {
+  margin-bottom: 25px;
+  padding: 0 25px;
+}
+
 .product__info {
   display: flex;
   justify-content: space-between;

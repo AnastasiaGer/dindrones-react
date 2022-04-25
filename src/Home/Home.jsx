@@ -3,7 +3,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <section className="about section" id="about">
         <div className="container">
           <div className="about__inner">
@@ -253,7 +253,7 @@ const Home = () => {
           </a>
         </div>
       </section> */}
-    </>
+    </div>
   );
 };
 
